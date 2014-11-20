@@ -1,0 +1,542 @@
+<section>
+<h2>Comparaisons</h2>
+<p>Apprendre en se bassant sur des exemples familliers</p>
+</section>
+
+<section>
+    <h3>'Hello World!'</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+package com.exemple
+
+class Exemple {
+    public static void main() {
+        System.out.println("Salut UQAM!");
+    }         
+}
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+if __name__ == '__main__':
+    print('Salut UQAM!')
+        </code></pre>
+        <div class="fragment" data-fragment-index="1">
+        <h6>- ou -</h6>
+                <pre><code class="python" data-trim>
+    print('Salut UQAM!')
+        </code></pre>
+    </div>
+
+    </div>
+    </div>
+
+    <div>
+        <div class="col2 fragment" data-fragment-index="2">
+            Un bloc est défini par des accolades.
+        </div>
+        <div class="col2 fragment" data-fragment-index="3">
+            Un bloc débute avec un `:` et est maintenu avec un niveau d'indentation.
+        </div>
+    </div>
+
+    
+</section>
+
+
+<section>
+    <h3>Assignation de variable</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+// type nom = valeur;
+
+int reponseUnivers = 42;
+String nom = "Rick Astley";
+
+Casquette c = new Casquette(Couleur.BLEU);
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+# nom = valeur
+
+reponseUnivers = 42
+nom = 'Rick Astley' # éq. "Rick Astley"
+
+c = Casquette(Couleur.BLEU)
+        </code></pre>
+    </div>
+
+    </div>
+
+    <div>
+        <div class="col2 fragment" data-fragment-index="2">
+            Type déclaré
+        </div>
+        <div class="col2 fragment" data-fragment-index="3">
+            Type inféré
+        </div>
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Conversion explicite de type</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+// String -> Integer
+int x = Integer.parseInt("42");
+
+// int -> float
+float y = (float) 2/3;
+
+// int -> String
+String s = new String(x); // Nope.
+String s = (String) x; // Nope.
+String s = ""+x; // Oui mais cohersion
+String s = new Integer(x).toString(); // lel
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+# str -> int
+x = int('42')
+
+# int -> float
+y = float(2)/3 #; 0.6666666666666666
+
+# int -> str
+s = str(42)
+        </code></pre>
+    </div>
+
+    </div>
+
+    <div class="fragment" data-fragment-index="2">
+        Dans tout les cas, on peut s'aider en créant des constructeurs, aux classes d'arrivé, acceptant en paramètre une instance de la classe source.
+    </div>
+
+    
+</section>
+
+
+<section>
+    <h3>Collections: listes</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+List&lt;Integer&gt; li = new ArrayList&lt;&gt
+    (Arrays.asList(1, 2, 3));
+
+li.add(5);
+
+li.size(); // 4
+
+li.get(1); // 2
+
+li1.addAll(li2); // Contenue de li1 dans li2
+
+li.clone(); // Duplique le tableau
+
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+li = [1, 2, 3]
+
+
+li.append(5)
+
+len(li) # 4
+
+li[1] # 2
+
+li1 + li2
+
+list(li) # aussi li[:] 
+        </code></pre>
+    </div>
+
+    </div>
+
+    <div>
+        <div class="col2 fragment" data-fragment-index="2">
+            Les types doivent s'en tenir à ce qui a été spécifié
+            dans le diamant.
+        </div>
+        <div class="col2 fragment" data-fragment-index="3">
+            Les types peuvent être variés.
+        </div>
+    </div>
+
+    <div>
+    <div class="col2 fragment" data-fragment-index="5">
+        <pre><code class="java" data-trim>
+List&lt;Object&gt; li = new ArrayList&lt;&gt;();
+...
+Integer i = (Integer) li.get(2)
+// Beurk
+        </code></pre>
+    </div>
+    <div class="col2 fragment" data-fragment-index="4">
+        <pre><code class="python" data-trim>
+li = [2, 3.453, "Shrek", Dog()]
+        </code></pre>
+    </div>
+
+    </div>
+    
+</section>
+
+<section>
+    <h3>Collections: Dictionnaires</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+Map&lt;String, String&gt; d = new HashMap&lt;&gt();
+
+d.put("hello", "bonjour");
+
+d.size(); // 1
+
+d.get(1); // null
+d.get("hello"); // "bonjour"
+
+d.clone(); // Duplique le dictionnaire
+
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+d = {'joy': 'joie', 'crazy': 'fou'}
+
+d['hello'] = 'bonjour'
+
+len(d) # 3
+
+d['fun'] # KeyError: 'fun'
+d['crazy'] # 'fou'
+
+dict(d) 
+        </code></pre>
+    </div>
+
+    </div>
+        <div>
+        <div class="col2">
+            
+        </div>
+        <div class="col2">
+            À regarder: collections.defaultdict
+        </div>  
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Exemple: Mini Traducteur</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+Map&lt;String, String&gt; e2d = new HashMap&lt;&gt();
+
+e2d.put("hero", "held");
+e2d.put("is", "ist");
+e2d.put("my", "mein");
+
+
+String english = "Shrek is my hero";
+String deutsch = "";
+
+for(String en_word : english.split(" ")) {
+ String de_word = e2d.get(en_word);
+ deutsch += (de_word == null? 
+             en_word : de_word)
+         + " ";
+}
+
+System.out.println(deutsch);
+
+
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+e2d = { 'hero': 'held',
+        'is': 'ist',
+        'my': 'mein'}
+
+english = 'Shrek is my hero'
+deutsch = ''
+
+for en_word in english:
+    deutsch += e2d.get(en_word, en_word) + ' '
+
+print(deutsch)
+
+
+        </code></pre>
+        <h5>- ou -</h5>
+        <pre><code class="python" data-trim>
+english = 'Shrek is my hero'
+deutsch = ' '.join(
+    [e2d.get(en_word, en_word)
+    for en_word in english.split(' ')])
+
+print(deutsch)
+
+
+        </code></pre>
+    </div>
+    </div>
+
+
+    
+</section>
+
+
+<section>
+    <h3>Flow Control: if</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+boolean shrekIsLove = true;
+
+if (2 &lt; 5) {
+    // Du code
+}
+
+else if (7 &lt; 8 
+    &amp;&amp; shrekIsLove
+    || "lord_farquad".equals("shrek")) {
+    System.out.println("pourquoi pas?");
+}
+
+else {
+    System.out.println("wat?");
+}
+
+System.out.println("Nous sommes sortis.");
+
+
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+shrek_is_love = True
+
+if 2 &lt; 5:
+    pass # Du code
+
+elif 2 &lt; 5 \
+    and shrek_is_love \
+    or 'lord_farquad' == 'shrek':
+    print('pourquoi pas?')
+
+else:
+    print('wat?')
+
+print('Nous sommes sortis.')
+        </code></pre>
+    </div>
+
+    </div>
+        <div>
+        <div class="col2">
+        <pre><code class="java" data-trim>
+int i = shrekIsLove ? 2 : 5;
+
+        </code></pre>
+            
+        </div>
+        <div class="col2">
+
+        <pre><code class="java" data-trim>
+i = 2 if shrekIsLove else 5
+
+        </code></pre>
+            
+        </div>  
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Flow Control: while</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+while(shrekIsLove) {
+    System.out.println("Je le savais!");
+
+    if (farquadEnVoyage) continue;
+
+    else if (fionaChoisiFarquad) {
+        S.o.println("It's all Ogre now.");
+        break;
+    };
+}
+
+
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+while shrek_is_love:
+    print("Je le savais!")
+
+    if farquad_en_voyage:
+        continue
+
+    elif fiona_choisi_farquad:
+        print("It's all Ogre now.")
+        break
+        </code></pre>
+    </div>
+
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>stdin</h3>
+    <h7>Sans la classe clavier</h7>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+BufferedReader in = 
+    new BufferedReader(
+        new InputStreamReader(System.in));
+
+String s;
+while ((s = in.readLine()) != null
+        &amp;&amp; s.length() != 0) {
+    // Bon... J'ai déjà oublié 
+    // ce que je voulais faire.
+
+}
+
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+nom = input("Nom: ") # raw_input pour python2
+age = int(input("Age: "))
+
+print('Salut %s, tu as %s an(s)' % (nom, age))
+        </code></pre>
+    </div>
+
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Fichiers</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+Charset charset = Charset.forName("US-ASCII");
+
+try (BufferedReader reader = Files
+    .newBufferedReader(file, charset)) {
+    String line = null;
+    while ((line = reader.readLine()) 
+            != null) {
+        System.out.println(line);
+    }
+} catch (IOException x) {
+    System.err.format("IOException: %s%n", x);
+}
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+with open('nombres.txt', 'r') as f:
+    print(f.read())
+</code></pre>
+    </div>
+
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Fonctions</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+// scope modifiers returnType nom(args) {}
+
+public static mult(int x, int y) {
+    return x * y;
+}
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+# def nom(*args, **kwargs):
+
+def mult(x, y=3):
+    return x * y
+</code></pre>
+    </div>
+
+    </div>
+
+    <div>
+        <div class="col2">
+        <pre><code class="java" data-trim>
+int i = shrekIsLove ? 2 : 5;
+
+        </code></pre>
+            
+        </div>
+        <div class="col2">
+
+        <pre><code class="java" data-trim>
+i = 2 if shrekIsLove else 5
+
+        </code></pre>
+            
+        </div>  
+    </div>
+
+    
+</section>
