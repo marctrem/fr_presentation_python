@@ -1,3 +1,4 @@
+<section>
 <h2>specificitees</h2>
 
 <p>Please change me!</p>
@@ -6,3 +7,137 @@
     Put your speaker notes here.
     You can see them pressing 's'.
 </aside>
+</section>
+
+<section>
+    <h3>Lambda aka Function literal aka Anonymous Function</h3>
+    <div>
+        <pre><code class="python" data-trim>
+dire_bonjour = lambda x: print('Bonjour %s' % s)
+
+dire_bonjour('Shrek') #; Bonjour Shrek
+        	</code></pre>
+    </div>
+    <div class="fragment" data-fragment-index="1">
+<pre><code class="python" data-trim>
+def bienvenue_chez(store):
+	return lambda x: print("Hey %s, bienvenu chez %s!")
+
+bienvenue_chez('Fort fort lointain')('Shrek') #; Hey Shrek, bienvenu chez Fort fort lointain.
+
+
+        	</code></pre>
+    </div>
+    <img class="fragment" data-fragment-index="2" src="http://media.tumblr.com/tumblr_m50gnsGtSK1qj3ir1.gif" />
+</section>
+
+<section>
+<h1>Je vous ai caché la vérité!</h1>
+<h3>Mais j'ai pas menti</h3>
+</section>
+
+<section>
+    <h3>Lambda aka Function literal aka Anonymous Function II</h3>
+    <div>
+        <pre><code class="python" data-trim>
+def f1():
+	return 'Donkey'
+
+f2 = lambda: 2+2
+
+
+print(type(f1), type(f2))
+        	</code></pre>
+    </div>
+
+    <div class="fragment" data-fragment-index="1">
+<h2>&lt;class 'function'&gt; &lt;class 'function'&gt;</h2>
+<img src="http://stream1.gifsoup.com/webroot/animatedgifs/70152_o.gif"/>
+    </div>
+</section>
+
+<section>
+    <h3>Fonction d'ordre supérieur</h3>
+    <small>En route vers les décorateurs!</small>
+    <div>
+        <pre><code class="python" data-trim>
+def fonction_bidon():
+	return 'Donkey'
+
+def ma_fos(fn1):
+	return fn1() + ' est le meilleur ami de Shrek!'
+
+
+print(ma_fos(fonction_bidon))
+        	</code></pre>
+    </div>
+
+    <div class="fragment" data-fragment-index="1">
+<h2>Donkey est le meilleur ami de Shrek!</h2>
+<img src="http://raider.mountunion.edu/ma/MA125/Fall2011/Chapter7/07s104.jpg"/>
+    </div>
+</section> 
+
+<section>
+    <h3>Petit exemple plus concret</h3>
+    <h5>Filtrons une liste de nombre!</h5>
+    <div class="fragment" data-fragment-index="0">
+        <pre><code class="python" data-trim>
+def filtreur(filtre, liste):
+    resultat = []
+    for element in liste:
+        if filtre(element):
+            resultat.append(element)
+    return resultat
+
+print(filtreur(lambda x: x>=18, [1, 20, 18, 11, 38]))
+
+</code></pre>
+    </div>
+
+    <div class="fragment" data-fragment-index="1">
+<h2>[20, 18, 38]</h2>
+    <div>
+    	<small>Meilleure façon de faire</small>
+        <pre><code class="python" data-trim>
+# Builtin
+filter(lambda x: x>=18, [1, 20, 18, 11, 38]) # Beaucoup plus performant!
+
+</code></pre>
+<small><a href="https://docs.python.org/3.4/library/functions.html#filter">Tout les builtins!</a></small>
+    </div>
+    </div>
+</section>
+
+<section>
+    <h3>Générateurs</h3>
+    <small>Ou comment être paresseux.</small>
+    <div>
+        <pre><code class="python" data-trim>
+def gen2(li):
+    for nombre in li:
+        yield nombre * 2
+
+print(sum(gen2, [1, 2, 3]))
+        	</code></pre>
+    </div>
+
+<div class="fragment" data-fragment-index="1">
+    	<br/>
+    	<h5>Un filtre plus éfficace?</h5>
+</div>
+    <div class="fragment" data-fragment-index="2">
+    	    <div>
+
+        <pre><code class="python" data-trim>
+def filtreur(filtre, liste):
+    for element in liste:
+        if filtre(element):
+            yield element
+    return resultat
+
+filtreur(lambda x: x>=18, [1, 20, 18, 11, 38])
+        	</code></pre>
+    </div>
+    </div>
+</section>
