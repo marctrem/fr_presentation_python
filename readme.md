@@ -17,7 +17,7 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 - Fichiers
 - Fonctions
 - Pourquoi Python est 'lent'
-- Objects
+- Classes
 - Opérateurs de comparaison
 
 
