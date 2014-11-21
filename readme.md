@@ -1,6 +1,6 @@
 # De Java vers Python
 
-Le but de cette présentation est de permettre aux gens connaissant Java d'être à l'aise en python le plus rapidement possible.
+Le but de cette présentation est de permettre aux gens connaissant Java d'être à l'aise en Python le plus rapidement possible.
 
 ## Sujets couverts
 

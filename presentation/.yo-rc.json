@@ -41,6 +41,9 @@
     "presentationTitle": "De Java à Python",
     "packageVersion": "0.0.0",
     "useSass": true,
-    "deployToGithubPages": false
+    "deployToGithubPages": false,
+    "revealTheme": "default",
+    "githubUsername": "example_username",
+    "githubRepository": "example_repository"
   }
 }
