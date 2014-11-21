@@ -46,6 +46,64 @@ if __name__ == '__main__':
     
 </section>
 
+<section>
+    <h3>Le Slang</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+// Beau commentaire
+
+null
+
+&amp;&amp; // et
+
+|| // ou
+
+== // comparaison de 'pointeurs'
+
+! // négation de booléens
+
+i++
+
+Math.pow(2, 16)
+
+-> // Java 8 lambda
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+# Beau commentaire
+
+None
+
+and
+
+or
+
+is
+
+not
+
+i += 1
+
+2 ** 16
+
+lambda # On va s'en parler plus tard.
+        </code></pre>
+    </div>
+
+    <div>
+        <div class="fragment" data-fragment-index="2">
+            Si tu parles anglais, tu parles Python.
+        </div>
+
+    </div>
+
+    
+</section>
+
 
 <section>
     <h3>Assignation de variable</h3>
@@ -523,15 +581,16 @@ def mult(x, y=3):
     <div>
         <div class="col2">
         <pre><code class="java" data-trim>
-int i = shrekIsLove ? 2 : 5;
+public int variadic(Object... arguments)
 
         </code></pre>
             
         </div>
         <div class="col2">
 
-        <pre><code class="java" data-trim>
-i = 2 if shrekIsLove else 5
+        <pre><code class="python" data-trim>
+def variadic(*args, **kwargs)
+# args est un tuple, kwargs est un dict
 
         </code></pre>
             
