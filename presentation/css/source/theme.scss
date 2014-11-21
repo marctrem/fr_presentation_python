@@ -56,9 +56,24 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // See ../../bower_components/reveal.js/css/theme/README.md
 // for further explanations on how reveal.js themes work.
 
-
+@mixin col($pct_width) {
+       vertical-align: center;
+        display: inline-table;
+        width: $pct_width; 
+}
 
 .col2 {
-	display: inline-table;
-	width: 49%;
+        @include col(49%)
+}
+
+.col13 {
+        @include col(32%)
+}
+
+.col23 {
+        @include col(60%)
+}
+
+.reveal pre code {
+        max-height:none;
 }

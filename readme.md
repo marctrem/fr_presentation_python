@@ -32,6 +32,10 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 
 - MapReduce
 
+### Exemples
+
+- Mini Traducteur
+- Word Count
 
 ### Exercices
 

@@ -147,7 +147,21 @@ body {
   color: #13DAEC; }
 
 .col2 {
+  vertical-align: center;
   display: inline-table;
   width: 49%; }
+
+.col13 {
+  vertical-align: center;
+  display: inline-table;
+  width: 32%; }
+
+.col23 {
+  vertical-align: center;
+  display: inline-table;
+  width: 60%; }
+
+.reveal pre code {
+  max-height: none; }
 
 /*# sourceMappingURL=theme.css.map */

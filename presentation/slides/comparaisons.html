@@ -482,6 +482,50 @@ while shrek_is_love:
 </section>
 
 <section>
+    <h3>Flow Control: for</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+for(int i = 0; i &lt; 10; ++i) {
+    // Do stuff
+}
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+for i in range(10):
+    # Do stuff
+        </code></pre>
+    </div>
+
+    </div>
+    <br/>
+<h3>Flow Control: foreach</h3>
+    <div>
+    <div class="col2">
+        <pre><code class="java" data-trim>
+for(String nom : toutLesNoms) {
+    // Do stuff
+}
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <pre><code class="python" data-trim>
+for nom in tout_les_noms:
+    # Do stuff
+        </code></pre>
+    </div>
+
+    </div>
+
+    
+</section>
+
+<section>
     <h3>stdin</h3>
     <h7>Sans la classe clavier</h7>
     <div>
@@ -595,6 +639,230 @@ def variadic(*args, **kwargs)
         </code></pre>
             
         </div>  
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Python? Lent? Voyons donc!</h3>
+    <h4>Fermez vos oreilles si vous ne pensez pas être prêt.</h4>
+    <small>Ceci n'est pas matière à examen</small>
+    <p>
+        Des idées?
+    </p>
+    <div>
+        <div class="col2" style="vertical-align:top;">
+            <h5>C (cpython)</h5>
+        <pre><code class="c" data-trim>
+typedef struct _object {
+    struct _object *_ob_next;
+    struct _object *_ob_prev;
+    Py_ssize_t ob_refcnt;
+    struct _typeobject *ob_type;
+} PyObject;
+
+typedef struct {
+    PyObject ob_base;
+    Py_ssize_t ob_size;
+} PyVarObject;
+
+        </code></pre>
+        <a href="https://hg.python.org/cpython/file/3.4/Include/object.h#l91">Source</a>
+            
+        </div>
+        <div class="col2">
+            <img src="http://jakevdp.github.io/images/cint_vs_pyint.png"/>
+            <img src="http://jakevdp.github.io/images/array_vs_list.png"/>
+        </div>  
+    </div>
+    <p class="fragment" data-fragment-index="0">
+        <small>Point de vue:
+        <a href="https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/">
+            jakevdp.github.io
+        </a></small>
+    </p>
+
+    
+</section>
+
+<section>
+    <h3>Classes</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+public class Personnage {
+    
+    public static int nombre = 3;
+    private age;
+    String nom;
+
+    public Personnage(String nom) {
+        if (nom == null) {nom = "Sans nom"};
+    }
+
+    public static void vivre() {...}
+
+    public int crier(String mot) {...}
+
+
+    private int chuchoter(String mot) {...}
+}
+
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+class Personnage:
+    
+    nombre = 3 # Variable statique
+
+    def __init__:(self, nom='Sans nom'):
+        self.nom = nom # Variable de classe
+        self.__age = 3 # 'privé'
+
+    @staticmethod
+    def vivre():
+
+    def crier(self, mot):
+    # ou
+    def crier(self, str: mot) -> str: # mypy
+
+    def __chuchoter(self, mot):
+
+</code></pre>
+    </div>
+
+    </div>
+
+</section>
+
+<section>
+    <h3>Classes: Héritage</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+public class Personnage {...}
+
+public class Humain extends Personnage {
+    public Humain() {
+        surper(args)
+    }
+    
+}
+
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+class Personnage:
+    pass
+
+class Humain(Personnage):
+    def __init__():
+        super().__init__(args)
+
+
+</code></pre>
+    </div>
+
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Classes: Héritage Multiple</h3>
+    <small>Pas sujet à examen</small>
+    <div>
+    <div class="col13">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+System.out.println("NOPE!");
+
+// Extend une seule
+// classe Abstraite
+// ou complète.
+
+// Implemente plusieurs
+// Interfaces.
+        </code></pre>
+
+    </div>
+    <div class="col23">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+class Base(object): 
+    def __init__(self, c):
+        print('Appelé par %s' % c)
+        super().__init__()
+
+class ParentA(Base):
+    def __init__(self, c):
+        print('ParentA appelé par %s' % c)
+        super().__init__('ParentA')
+
+class ParentB(Base):
+    def __init__(self, c):
+        print('ParentB appelé par %c' % c)
+        super().__init__('ParentB')
+
+class Enfant(ParentA, ParentB):
+    def __init__(self, c):
+        print('Enfant appelé par %c' % c)
+        super().__init__('Enfant')
+
+Enfant('Construct')
+print(Enfant.mro()) # Method Resolution Order
+
+
+</code></pre>
+<small>
+<a href="https://www.python.org/download/releases/2.3/mro/">Explication MRO</a>
+</small>
+    </div>
+
+    </div>
+
+    
+</section>
+
+<section>
+    <h3>Classes: Métodes intéressantes</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+@Override
+public String toString()
+
+public int compareTo(MemeType autre)
+
+        </code></pre>
+
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+# Pas besoin de spécifier l'override.
+def __str__():
+def __repr__(): # Représentation
+def __cmp__():
+
+def __call__():
+def __getattr__():
+def __setattr__():
+
+
+</code></pre>
+    </div>
+
     </div>
 
     
