@@ -134,10 +134,73 @@ def filtreur(filtre, liste):
     for element in liste:
         if filtre(element):
             yield element
-    return resultat
 
 filtreur(lambda x: x>=18, [1, 20, 18, 11, 38])
         	</code></pre>
     </div>
     </div>
+    <aside class="notes">
+    Avantages:
+    
+</aside>
+</section>
+
+<section>
+    <h3>Décorateurs, décors ta vie.</h3>
+
+<div>
+        <small>Pour pros seulement: Trouve le bug vu que t'es pro.</small>
+        <pre><code class="python" data-trim>
+def annonceur_debut_fin(ma_fn):
+    
+    def nouvelle_fn(*args, **kwargs):
+        print('--- On débute!')
+        retval = ma_fn(*args, **kwargs)
+        print('--- On fini!')
+        return retval
+    return nouvelle_fn
+
+print = annonceur_debut_fin(print)
+print('Le Chat potté')
+            </code></pre>
+    </div>
+<br/>
+    <div>
+        <small>Pour pros seulement: Trouve le bug vu que t'es pro.</small>
+        <pre><code class="python" data-trim>
+def annonceur_debut_fin(ma_fn):
+    
+    def nouvelle_fn(*args, **kwargs):
+        print('--- On débute!')
+        retval = ma_fn(*args, **kwargs)
+        print('--- On fini!')
+        return retval
+    return nouvelle_fn
+
+print = annonceur_debut_fin(print)
+print('Le Chat potté')
+            </code></pre>
+    </div>
+
+<div class="fragment" data-fragment-index="1">
+        <br/>
+        <h5>Un filtre plus éfficace?</h5>
+</div>
+    <div class="fragment" data-fragment-index="2">
+            <div>
+
+        <pre><code class="python" data-trim>
+def filtreur(filtre, liste):
+    for element in liste:
+        if filtre(element):
+            yield element
+
+filtreur(lambda x: x>=18, [1, 20, 18, 11, 38])
+            </code></pre>
+    </div>
+    </div>
+    <aside class="notes">
+    Avantages:
+    
+</aside>
 </section>

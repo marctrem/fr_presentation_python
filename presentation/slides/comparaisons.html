@@ -696,10 +696,11 @@ public class Personnage {
     
     public static int nombre = 3;
     private age;
-    String nom;
+    public String nom;
 
     public Personnage(String nom) {
-        if (nom == null) {nom = "Sans nom"};
+        if (nom == null) this.nom = "Sans nom";
+        else this.nom = nom;
     }
 
     public static void vivre() {...}

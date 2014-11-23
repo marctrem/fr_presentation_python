@@ -1,0 +1,41 @@
+De Java vers Python!
+
+L'AGEEI vous invite à sa soirée: De Java vers Python!
+Ceci est une petite présentation ayant pour but de vous apprendre le Fourchelangue: Python! Après cette séance, vous aurez une meilleure idée de ce qu'est Python. Vous serez aussi capable de vous en servir!
+
+Cette séance aura lieu en 3 parties:
+
+La première à pour objectif de vous présenter Python en le comparant avec notre bon vieux Java. 
+
+La 2 ème sera sur des concepts un peu plus avancés: 
+- Lambdas
+- Générateurs
+- Fonctions d'ordre supérieur 
+- Décorateurs
+- Intro à Map Reduce 
+
+La dernière sera une période d'exercice. Vous aurez des Pythonistas à vos cotés pour vous aider!
+Il y aura entre autre: 
+- Jean-Philippe Caissy
+- Nilovna Bascunan-Vasquez
+- Philippe Pépos Petitclerc
+- Marc-André Tremblay
+
+Prérequis: être à l'aise en Java 
+
+À apporter:
+- Votre ordi
+- Python 3
+- PyCharm (https://www.jetbrains.com/student/)
+- Votre bonne humeur
+- Votre amour pour Shrek
+
+Local: SH-1620
+Heure: 16:45
+Jour : Jeudi le 27 novembre 2014
+
+Nous finirons la soirée au bar BÉNÉLUX rue Sherbrooke! Au plaisir de vous y voir :)!
+
+---------------
+Marc-André Tremblay
+VP Compétition @ AGEEI
