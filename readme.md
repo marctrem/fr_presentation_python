@@ -24,13 +24,18 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 
 ### Volet spécificitées
 
+- Évaluation et exécution
 - Lambdas
 - Générateurs
 - Décorateurs
+- Compréhension de liste
+- Compréhension de dictionnaire
 
 ### Théorie
 
-- MapReduce
+- Map
+- Reduce (foldl)
+- Filter
 
 ### Exemples
 
@@ -39,7 +44,7 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 
 ### Exercices
 
-https://projecteuler.net/problem=13
+- https://projecteuler.net/problem=13
 
 
 ### Matériel requis
