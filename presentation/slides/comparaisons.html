@@ -22,12 +22,12 @@ class Exemple {
         <h5>Python</h5>
         <pre><code class="python" data-trim>
 if __name__ == '__main__':
-    print 'Salut UQAM!'
+    print('Salut UQAM!')
         </code></pre>
         <div class="fragment" data-fragment-index="1">
         <h6>- ou -</h6>
                 <pre><code class="python" data-trim>
-    print 'Salut UQAM!'
+    print('Salut UQAM!')
         </code></pre>
     </div>
 
@@ -656,16 +656,16 @@ class Personnage:
 
     nombre = 3 # Variable statique
 
-    def __init__:(self, nom='Sans nom'):
+    def __init__(self, nom='Sans nom'):
         self.nom = nom # Variable de classe
-        self.__age = 3 # 'privé'
+        self.__age = 3 # 'presque caché'
 
     @staticmethod
     def vivre():
 
     def crier(self, mot):
     # ou
-    def crier(self, str: mot) -> str: # mypy
+    def crier(self, mot: str) -> str: # mypy
 
     def __chuchoter(self, mot):
 
@@ -701,7 +701,7 @@ class Personnage:
     pass
 
 class Humain(Personnage):
-    def __init__():
+    def __init__(self):
         super().__init__(args)
 
 
