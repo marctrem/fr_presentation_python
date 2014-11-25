@@ -43,7 +43,7 @@ if __name__ == '__main__':
         </div>
     </div>
 
-    
+
 </section>
 
 <section>
@@ -101,7 +101,7 @@ lambda # On va s'en parler plus tard.
 
     </div>
 
-    
+
 </section>
 
 
@@ -142,7 +142,7 @@ c = Casquette(Couleur.BLEU)
         </div>
     </div>
 
-    
+
 </section>
 
 <section>
@@ -184,7 +184,7 @@ s = str(42)
         Dans tout les cas, on peut s'aider en créant des constructeurs, aux classes d'arrivé, acceptant en paramètre une instance de la classe source.
     </div>
 
-    
+
 </section>
 
 
@@ -223,7 +223,7 @@ li[1] # 2
 
 li1 + li2
 
-list(li) # aussi li[:] 
+list(li) # aussi li[:]
         </code></pre>
     </div>
 
@@ -290,21 +290,21 @@ d['fun'] # KeyError: 'fun'
 d['crazy'] # 'fou'
 d.get('fun', 'donkey') # donkey
 
-dict(d) 
+dict(d)
         </code></pre>
     </div>
 
     </div>
         <div>
         <div class="col2">
-            
+
         </div>
         <div class="col2">
             À regarder: collections.defaultdict
-        </div>  
+        </div>
     </div>
 
-    
+
 </section>
 
 <section>
@@ -319,7 +319,7 @@ if (2 &lt; 5) {
     // Du code
 }
 
-else if (7 &lt; 8 
+else if (7 &lt; 8
     &amp;&amp; shrekIsLove
     || "lord_farquad".equals("shrek")) {
     System.out.println("pourquoi pas?");
@@ -330,8 +330,6 @@ else {
 }
 
 System.out.println("Nous sommes sortis.");
-
-
         </code></pre>
 
     </div>
@@ -362,7 +360,7 @@ print('Nous sommes sortis.')
 int i = shrekIsLove ? 2 : 5;
 
         </code></pre>
-            
+
         </div>
         <div class="col2">
 
@@ -370,11 +368,11 @@ int i = shrekIsLove ? 2 : 5;
 i = 2 if shrekIsLove else 5
 
         </code></pre>
-            
-        </div>  
+
+        </div>
     </div>
 
-    
+
 </section>
 
 <section>
@@ -415,7 +413,7 @@ while shrek_is_love:
 
     </div>
 
-    
+
 </section>
 
 <section>
@@ -459,7 +457,7 @@ for nom in tout_les_noms:
 
     </div>
 
-    
+
 </section>
 
 <section>
@@ -469,14 +467,14 @@ for nom in tout_les_noms:
     <div class="col2">
         <h5>Java</h5>
         <pre><code class="java" data-trim>
-BufferedReader in = 
+BufferedReader in =
     new BufferedReader(
         new InputStreamReader(System.in));
 
 String s;
 while ((s = in.readLine()) != null
         &amp;&amp; s.length() != 0) {
-    // Bon... J'ai déjà oublié 
+    // Bon... J'ai déjà oublié
     // ce que je voulais faire.
 
 }
@@ -496,7 +494,7 @@ print('Salut %s, tu as %s an(s)' % (nom, age))
 
     </div>
 
-    
+
 </section>
 
 <section>
@@ -510,7 +508,7 @@ Charset charset = Charset.forName("US-ASCII");
 try (BufferedReader reader = Files
     .newBufferedReader(file, charset)) {
     String line = null;
-    while ((line = reader.readLine()) 
+    while ((line = reader.readLine())
             != null) {
         System.out.println(line);
     }
@@ -530,7 +528,7 @@ with open('nombres.txt', 'r') as f:
 
     </div>
 
-    
+
 </section>
 
 <section>
@@ -565,7 +563,7 @@ def mult(x, y=3):
 public int variadic(Object... arguments)
 
         </code></pre>
-            
+
         </div>
         <div class="col2">
 
@@ -574,11 +572,11 @@ def variadic(*args, **kwargs)
 # args est un tuple, kwargs est un dict
 
         </code></pre>
-            
-        </div>  
+
+        </div>
     </div>
 
-    
+
 </section>
 
 <section>
@@ -606,12 +604,12 @@ typedef struct {
 
         </code></pre>
         <a href="https://hg.python.org/cpython/file/3.4/Include/object.h#l91">Source</a>
-            
+
         </div>
         <div class="col2">
             <img src="http://jakevdp.github.io/images/cint_vs_pyint.png"/>
             <img src="http://jakevdp.github.io/images/array_vs_list.png"/>
-        </div>  
+        </div>
     </div>
     <p class="fragment" data-fragment-index="0">
         <small>Point de vue:
@@ -620,7 +618,7 @@ typedef struct {
         </a></small>
     </p>
 
-    
+
 </section>
 
 <section>
@@ -630,7 +628,7 @@ typedef struct {
         <h5>Java</h5>
         <pre><code class="java" data-trim>
 public class Personnage {
-    
+
     public static int nombre = 3;
     private age;
     public String nom;
@@ -655,7 +653,7 @@ public class Personnage {
         <h5>Python</h5>
         <pre><code class="python" data-trim>
 class Personnage:
-    
+
     nombre = 3 # Variable statique
 
     def __init__:(self, nom='Sans nom'):
@@ -690,7 +688,7 @@ public class Humain extends Personnage {
     public Humain() {
         surper(args)
     }
-    
+
 }
 
         </code></pre>
@@ -712,7 +710,7 @@ class Humain(Personnage):
 
     </div>
 
-    
+
 </section>
 
 <section>
@@ -736,7 +734,7 @@ System.out.println("NOPE!");
     <div class="col23">
         <h5>Python</h5>
         <pre><code class="python" data-trim>
-class Base(object): 
+class Base(object):
     def __init__(self, c):
         print('Base appelé par %s' % c)
         super().__init__()
@@ -768,7 +766,7 @@ print(Enfant.mro()) # Method Resolution Order
 
     </div>
 
-    
+
 </section>
 
 <section>
@@ -802,8 +800,6 @@ def __setattr__():
     </div>
 
     </div>
-
-    
 </section>
 
 <section>
@@ -824,7 +820,7 @@ String deutsch = "";
 
 for(String en_word : english.split(" ")) {
  String de_word = e2d.get(en_word);
- deutsch += (de_word == null? 
+ deutsch += (de_word == null?
              en_word : de_word)
          + " ";
 }
@@ -872,5 +868,5 @@ print(deutsch)
     </div>
 
 
-    
+
 </section>
