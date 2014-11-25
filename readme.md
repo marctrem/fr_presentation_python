@@ -4,23 +4,21 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 
 ## Sujets couverts
 
-### Volet comparaison 
+### Volet comparaison
 
 - Indentation
 - Assignation de variable
-- Chaines
+- Chaînes de caractères
 - Listes, dictionnaires
-- Conversion de type
+- Conversions de type
 - Taille d'un int (Promotion numérique)
-- Control de 'Flow'
+- Control de flot
 - stdin
 - Fichiers
 - Fonctions
 - Pourquoi Python est 'lent'
 - Classes
 - Opérateurs de comparaison
-
-
 
 ### Volet spécificitées
 
@@ -45,7 +43,6 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 ### Exercices
 
 - https://projecteuler.net/problem=13
-
 
 ### Matériel requis
 
