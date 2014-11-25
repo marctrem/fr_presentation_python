@@ -288,6 +288,7 @@ len(d) # 3
 
 d['fun'] # KeyError: 'fun'
 d['crazy'] # 'fou'
+d.get('fun', 'donkey') # donkey
 
 dict(d) 
         </code></pre>
@@ -305,70 +306,6 @@ dict(d)
 
     
 </section>
-
-<section>
-    <h3>Exemple: Mini Traducteur</h3>
-    <div>
-    <div class="col2">
-        <h5>Java</h5>
-        <pre><code class="java" data-trim>
-Map&lt;String, String&gt; e2d = new HashMap&lt;&gt();
-
-e2d.put("hero", "held");
-e2d.put("is", "ist");
-e2d.put("my", "mein");
-
-
-String english = "Shrek is my hero";
-String deutsch = "";
-
-for(String en_word : english.split(" ")) {
- String de_word = e2d.get(en_word);
- deutsch += (de_word == null? 
-             en_word : de_word)
-         + " ";
-}
-
-System.out.println(deutsch);
-
-
-        </code></pre>
-    </div>
-    <div class="col2">
-        <h5>Python</h5>
-        <pre><code class="python" data-trim>
-e2d = { 'hero': 'held',
-        'is': 'ist',
-        'my': 'mein'}
-
-english = 'Shrek is my hero'
-deutsch = ''
-
-for en_word in english:
-    deutsch += e2d.get(en_word, en_word) + ' '
-
-print(deutsch)
-
-
-        </code></pre>
-        <h5>- ou -</h5>
-        <pre><code class="python" data-trim>
-english = 'Shrek is my hero'
-deutsch = ' '.join(
-    [e2d.get(en_word, en_word)
-    for en_word in english.split(' ')])
-
-print(deutsch)
-
-
-        </code></pre>
-    </div>
-    </div>
-
-
-    
-</section>
-
 
 <section>
     <h3>Flow Control: if</h3>
@@ -801,7 +738,7 @@ System.out.println("NOPE!");
         <pre><code class="python" data-trim>
 class Base(object): 
     def __init__(self, c):
-        print('Appelé par %s' % c)
+        print('Base appelé par %s' % c)
         super().__init__()
 
 class ParentA(Base):
@@ -811,12 +748,12 @@ class ParentA(Base):
 
 class ParentB(Base):
     def __init__(self, c):
-        print('ParentB appelé par %c' % c)
+        print('ParentB appelé par %s' % c)
         super().__init__('ParentB')
 
 class Enfant(ParentA, ParentB):
     def __init__(self, c):
-        print('Enfant appelé par %c' % c)
+        print('Enfant appelé par %s' % c)
         super().__init__('Enfant')
 
 Enfant('Construct')
@@ -865,6 +802,75 @@ def __setattr__():
     </div>
 
     </div>
+
+    
+</section>
+
+<section>
+    <h3>Exemple: Mini Traducteur</h3>
+    <div>
+    <div class="col2">
+        <h5>Java</h5>
+        <pre><code class="java" data-trim>
+Map&lt;String, String&gt; e2d = new HashMap&lt;&gt();
+
+e2d.put("hero", "held");
+e2d.put("is", "ist");
+e2d.put("my", "mein");
+
+
+String english = "Shrek is my hero";
+String deutsch = "";
+
+for(String en_word : english.split(" ")) {
+ String de_word = e2d.get(en_word);
+ deutsch += (de_word == null? 
+             en_word : de_word)
+         + " ";
+}
+
+System.out.println(deutsch);
+
+
+        </code></pre>
+    </div>
+    <div class="col2">
+        <h5>Python</h5>
+        <pre><code class="python" data-trim>
+e2d = { 'hero': 'held',
+        'is': 'ist',
+        'my': 'mein'}
+
+english = 'Shrek is my hero'
+
+# indice: english.split()
+
+</code></pre>
+<div class="fragment" data-fragment-index="1">
+<pre><code class="python" data-trim>
+deutsch = ''
+
+for en_word in english.split():
+    deutsch += e2d.get(en_word, en_word) + ' '
+
+print(deutsch)
+
+
+        </code></pre>
+        <h5>- ou -</h5>
+        <pre><code class="python" data-trim>
+deutsch = ' '.join(
+    [e2d.get(en_word, en_word)
+    for en_word in english.split()])
+
+print(deutsch)
+
+
+        </code></pre>
+    </div>
+    </div>
+    </div>
+
 
     
 </section>

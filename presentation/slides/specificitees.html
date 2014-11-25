@@ -10,6 +10,42 @@
 </section>
 
 <section>
+    <h3>Trop interprété</h3>
+    <h4>Évalue moi donc ça</h4>
+
+<div>
+    <pre><code class="python" data-trim>
+x = 4
+
+eval('x') # 4
+
+eval('2 + 3') # 5
+
+eval('x = 6') # SyntaxError  Hell no. Ceci est un statement.
+    </code></pre>
+    </div>
+<br/>
+    <div class="fragment" data-fragment-index="1">
+        <h4>Exécute moi ça et que ça saute!</h4>
+        <pre><code class="python" data-trim>
+exec('x = 6')
+
+x # 6
+
+user_data = "os.execve('/bin/bash' , [], {})"
+exec(user_data) # GG
+
+            </code></pre>
+            <a href="//www.python.org">Un interprèteur Python quelconque.</a>
+    </div>
+
+    <aside class="notes">
+    Statement vs Expression
+    
+</aside>
+</section>
+
+<section>
     <h3>Lambda aka Function literal aka Anonymous Function</h3>
     <div>
         <pre><code class="python" data-trim>
@@ -165,42 +201,15 @@ print('Le Chat potté')
             </code></pre>
     </div>
 <br/>
-    <div>
-        <small>Pour pros seulement: Trouve le bug vu que t'es pro.</small>
-        <pre><code class="python" data-trim>
-def annonceur_debut_fin(ma_fn):
-    
-    def nouvelle_fn(*args, **kwargs):
-        print('--- On débute!')
-        retval = ma_fn(*args, **kwargs)
-        print('--- On fini!')
-        return retval
-    return nouvelle_fn
-
-print = annonceur_debut_fin(print)
-print('Le Chat potté')
-            </code></pre>
-    </div>
 
 <div class="fragment" data-fragment-index="1">
         <br/>
         <h5>Un filtre plus éfficace?</h5>
 </div>
-    <div class="fragment" data-fragment-index="2">
-            <div>
 
-        <pre><code class="python" data-trim>
-def filtreur(filtre, liste):
-    for element in liste:
-        if filtre(element):
-            yield element
-
-filtreur(lambda x: x>=18, [1, 20, 18, 11, 38])
-            </code></pre>
-    </div>
-    </div>
     <aside class="notes">
-    Avantages:
+    Late bindings: Les variables internes dans les closures sont résolues seulement à l'exécution de la fonction interne.
+    http://docs.python-guide.org/en/latest/writing/gotchas/
     
 </aside>
 </section>
