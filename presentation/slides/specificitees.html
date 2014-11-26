@@ -36,7 +36,8 @@ user_data = "os.execve('/bin/bash' , [], {})"
 exec(user_data) # GG
 
             </code></pre>
-            <a href="//www.python.org">Un interprèteur Python quelconque.</a>
+            <a href="//www.python.org">Un interprèteur Python quelconque.</a><br/>
+            <a href="https://docs.python.org/3.4/library/ast.html#ast.literal_eval">Evaluer seulement les litéraux</a>
     </div>
 
     <aside class="notes">
@@ -134,14 +135,17 @@ print(filtreur(lambda x: x>=18, [1, 20, 18, 11, 38]))
     <div class="fragment" data-fragment-index="1">
 <h2>[20, 18, 38]</h2>
     <div>
-    	<small>Meilleure façon de faire</small>
+    	<small>Problème? Meilleure façon de faire?</small>
+            </div>
+            </div>
+            <div class="fragment" data-fragment-index="2">
         <pre><code class="python" data-trim>
 # Builtin
 filter(lambda x: x>=18, [1, 20, 18, 11, 38]) # Beaucoup plus performant!
 
 </code></pre>
 <small><a href="https://docs.python.org/3.4/library/functions.html#filter">Tout les builtins!</a></small>
-    </div>
+    
     </div>
 </section>
 
@@ -184,9 +188,24 @@ filtreur(lambda x: x>=18, [1, 20, 18, 11, 38])
 <section>
     <h3>Décorateurs, décores ta vie.</h3>
 
+            <pre><code class="python" data-trim>
+def annonceur_debut(ma_fn):
+    
+    def nouvelle_fn(*args, **kwargs):
+        print('On va entrer dans "%s"' % ma_fn.__name__)
+        retval = ma_fn(*args, **kwargs)
+        return retval
+    return nouvelle_fn
+
+@annonceur_debut
+def square_me(x):
+    return x ** 2
+            </code></pre>
+
 <div>
-        <small>Pour pros seulement: Trouve le bug vu que t'es pro.</small>
+
         <pre><code class="python" data-trim>
+# Bugged. Trouve l'erreur Pour pros seulement. (Go Peppos, t'es capable!)
 def annonceur_debut_fin(ma_fn):
     
     def nouvelle_fn(*args, **kwargs):
@@ -200,16 +219,81 @@ print = annonceur_debut_fin(print)
 print('Le Chat potté')
             </code></pre>
     </div>
-<br/>
 
-<div class="fragment" data-fragment-index="1">
-        <br/>
-        <h5>Un filtre plus efficace?</h5>
-</div>
+Décorateur: beau mot pour fonction d'ordre supérieur
 
     <aside class="notes">
     Late bindings: Les variables internes dans les fermetures sont résolues seulement à l'exécution de la fonction interne.
     http://docs.python-guide.org/en/latest/writing/gotchas/
+    
+</aside>
+</section>
+
+<section>
+    <h3>Cas d'utilisation</h3>
+<div>
+<ul>
+    <li class="fragment" data-fragment-index="1">Macros</li>
+    <li class="fragment" data-fragment-index="2">Injection</li>
+    <li class="fragment" data-fragment-index="3">Programmation orientée aspect</li>
+    <li class="fragment" data-fragment-index="4">Partir une discution avec Jean-Phillipe Caissy</li>
+</ul>
+</div>
+<br/>
+<div class="fragment" data-fragment-index="5">Attention aux "Late bindings"</div>
+<br/>
+<p>
+<small>Voir exemples dans le IPython Notebook fourni</small>
+</p>
+
+<aside class="notes">
+    
+</aside>
+</section>
+
+<section>
+    <h3>Compréhension de liste</h3>
+
+<div>
+        <pre><code class="python" data-trim>
+#
+[valeur_finale for element in iterable]
+[valeur_finale for element in iterable if predicat]
+#
+
+ls_depart = [2, 3, 53, 52, 4, 42, 3, 4]
+
+l1_fin = [x**2 for x in ls_depart] # l1_fin: [4, 9, 2809, 2704, 16, 1764, 9, 16]
+
+l2_fin = [x**3 for x in ls_depart if x * 2 &lt; 100] # l2_fin: [8, 27, 64, 74088, 27, 64]
+            </code></pre>
+            Tu peux voir ça comme:<br/>
+            map(mfn, filter(ffn, collection))
+    </div>
+
+    <aside class="notes">
+    
+</aside>
+</section>
+
+<section>
+    <h3>Compréhension de dictionnaire</h3>
+
+<div>
+        <pre><code class="python" data-trim>
+#
+{cle_finale: valeur_finale for element in iterable}
+{cle_finale: valeur_finale for element in iterable if predicat}
+#
+
+d1 = {k: chr(k) for k in range(97, 100)} # l1_fin: {97: 'a', 98: 'b', 99: 'c'}
+
+d2 = {d1[k]: k for k in d1}# d2: {'a': 97, 'b': 98, 'c': 99}
+            </code></pre>
+            
+    </div>
+
+    <aside class="notes">
     
 </aside>
 </section>

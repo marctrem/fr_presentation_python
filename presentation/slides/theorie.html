@@ -1,0 +1,64 @@
+<section>
+<h2>théorie</h2>
+
+<p>Please change me!</p>
+
+<aside class="notes">
+    Put your speaker notes here.
+    You can see them pressing 's'.
+</aside>
+</section>
+
+<section>
+<h2>Map</h2>
+
+<p>est une fonction d'ordre supérieur ayant la signature: <br/><a href="https://docs.python.org/3.4/library/functions.html#map">map</a>(function, iterable, ...)<br/></p>
+
+<div>
+        <pre><code class="python" data-trim>
+#
+map(function, iterable, ...)
+#
+
+m = map(lambda x: 2**x, [0, 1, 2, 3, 4, 5, 6]) # m: &lt;map at 0x7f2308ab7080&gt;
+
+next(m) # 1
+next(m) # 2
+next(m) # 4
+
+            </code></pre>
+            
+    </div>
+
+<aside class="notes">
+    Put your speaker notes here.
+    You can see them pressing 's'.
+</aside>
+</section>
+
+<section>
+<h2>Reduce</h2>
+
+<p>est une fonction d'ordre supérieur ayant la signature: <br/><a href="https://docs.python.org/3.4/library/functools.html#functools.reduce">reduce</a>(function, iterable[, initializer])
+<div>
+        <pre><code class="python" data-trim>
+import functools
+#
+functools.reduce(function, iterable[, initializer])
+#
+
+m = map(lambda x: 2**x, [0, 1, 2, 3, 4, 5, 6]) # m: &lt;map at 0x7f2308ab7080&gt;
+
+next(m) # 1
+next(m) # 2
+next(m) # 4
+
+            </code></pre>
+            
+    </div>
+
+<aside class="notes">
+    Put your speaker notes here.
+    You can see them pressing 's'.
+</aside>
+</section>
