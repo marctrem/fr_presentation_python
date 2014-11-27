@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Vous devez compléter le code de la fonction provide_groups déclarée plus bas.
+# Vous devez compléter le code de la fonction require_group déclarée plus bas.
 
 from codecs import encode
 
@@ -23,34 +23,15 @@ def provide_user(mon_endpoint):
 
 
 def provide_groups(mon_endpoint):
+    # Reprenez la fonction que vous avez fait à l'exercice précédent.
+    pass
 
-    def nouvelle_fn(*args, **kwargs):
-
-        if 'user' not in mon_endpoint.__globals__:
-            print(mon_endpoint.__globals__)
-            raise Exception('No. Please have user in the function\'s globals before calling this.')
-
-        mon_endpoint.__globals__['groups'] = groups_from_users.get(mon_endpoint.__globals__['user'], None)
-        return mon_endpoint(*args, **kwargs)
-    return nouvelle_fn
 
 
 def require_group(allowed_groups):
-    def require_group_inner(mon_endpoint):
+    # Mettre votre code ici.
+    pass
 
-        def nouvelle_fn(*args, **kwargs):
-
-            if 'groups' not in mon_endpoint.__globals__:
-                print(mon_endpoint.__globals__)
-                raise Exception('No. Please have groups in the function\'s globals before calling this.')
-
-            if len(allowed_groups.intersection(mon_endpoint.__globals__['groups'])) > 0:
-                return mon_endpoint(*args, **kwargs)
-            else:
-                raise Exception('Pas le droit d\'être ici!')
-
-        return nouvelle_fn
-    return require_group_inner
 
 
 @provide_user
