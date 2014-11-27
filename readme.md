@@ -43,11 +43,21 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 
 ### Exercices
 
-- https://projecteuler.net/problem=13
-- Générateur en guise d'itérateur dans un arbre binaire
+#### Project Euler
+- https://projecteuler.net/problem=1 (Multiples of 3 and 5)
+- https://projecteuler.net/problem=2 (Even Fibonacci numbers)
+- https://projecteuler.net/problem=13 (Large sum)
+- https://projecteuler.net/problem=14 (Longest Collatz sequence)
+- https://projecteuler.net/problem=16 (Power digit sum)
+- https://projecteuler.net/problem=92 (Square digit chains)
+
+
+Ajoutez-moi! 375454_ce5d7f96d544f136341387a686097269
+#### Fait maison
+- Générateur: Itérateur dans un arbre binaire
 - Décorateur: Dis moi qui tu es. (Injection dans les globales)
 - Décorateur: Tu dois être dans le bon groupe. (Injection et filtre avec globales)
-
+- Word count à la Harry Potter!
 ### Matériel requis
 
 - Python 3
