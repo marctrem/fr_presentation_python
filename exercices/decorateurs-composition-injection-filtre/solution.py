@@ -8,8 +8,10 @@ from codecs import encode
 groups_from_users = {'Shrek': {'swamplords', 'ogres'},
                      'Fiona': {'admins', 'princesses'}}
 
+
 def fetch_user_from_session_id(session_id):
     return encode(session_id, 'rot13')
+
 
 def provide_user(mon_endpoint):
 
@@ -19,13 +21,22 @@ def provide_user(mon_endpoint):
         return mon_endpoint(*args, **kwargs)
     return nouvelle_fn
 
+
 def provide_groups(mon_endpoint):
-    raise NotImplementedError('Remplacer ça par votre code!')
+    # Reprenez la fonction que vous avez fait à l'exercice précédent.
+    pass
+
+
+
+def require_group(allowed_groups):
+    # Mettre votre code ici.
+    pass
 
 
 
 @provide_user
 @provide_groups
+@require_group({'admins'})
 def page_secrete(req_headers=None):
     global user, groups
 
@@ -36,11 +47,11 @@ def page_secrete(req_headers=None):
 # Session de Fiona: Svban
 # Session de Shrek: Fuerx
 
-response = page_secrete(req_headers={'session_id': 'Fuerx',
+response = page_secrete(req_headers={'session_id': 'Svban',
                                 'user_agent': 'Shrek Explorer 20'})
 
 
-if response == "Bienvenue Shrek. Tu utilises Shrek Explorer 20. Tu fais parti des groupes {'swamplords', 'ogres'}.":
+if response == "Bienvenue Fiona. Tu utilises Shrek Explorer 20. Tu fais parti des groupes {'admins', 'princesses'}.":
     print("Bravo!!!", response)
 else:
     print('Essaie encore :(', response)
