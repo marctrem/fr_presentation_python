@@ -33,6 +33,7 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 
 - Map
 - Reduce (foldl)
+- Foldr
 - Filter
 
 ### Exemples
@@ -43,6 +44,9 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 ### Exercices
 
 - https://projecteuler.net/problem=13
+- Générateur en guise d'itérateur dans un arbre binaire
+- Décorateur: Dis moi qui tu es. (Injection dans les globales)
+- Décorateur: Tu dois être dans le bon groupe. (Injection et filtre avec globales)
 
 ### Matériel requis
 
@@ -63,5 +67,4 @@ Avoir Node, Grunt, Bower, Ruby et Compass (assez stardard comme stack)
 
 `bower` pour partir le serveur en live reload
 `bower dist` pour créer le dossier distribuable.
-
 
