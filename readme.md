@@ -39,7 +39,7 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 ### Exemples
 
 - Mini Traducteur
-- Word Count
+- Word Count (collections.defaultdict)
 
 ### Exercices
 
@@ -54,17 +54,17 @@ Le but de cette présentation est de permettre aux gens connaissant Java d'être
 
 ### Construire le distribuable
 
-Avoir Node, Grunt, Bower, Ruby et Compass (assez stardard comme stack)
+Avoir Node, Grunt, Bower, Ruby et Compass. (assez stardard comme stack)
 
 
-`cd presentation`
+-`cd presentation`
 
-`npm install grunt-cli -g` Installer Grunt
-`npm install bower -g`Installer Bower
+-`npm install grunt-cli -g` Installer Grunt
+-`npm install bower -g`Installer Bower
 
-`npm install` Installer les paquets Node locaux requis
-`bower install` Installer les libraries web
+-`npm install` Installer les paquets Node locaux requis
+-`bower install` Installer les libraries web
 
-`bower` pour partir le serveur en live reload
-`bower dist` pour créer le dossier distribuable.
+-`bower` pour partir le serveur en live reload
+-`bower dist` pour créer le dossier distribuable.
 
