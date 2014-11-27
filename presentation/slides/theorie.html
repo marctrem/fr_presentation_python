@@ -1,8 +1,6 @@
 <section>
 <h2>théorie</h2>
 
-<p>Please change me!</p>
-
 <aside class="notes">
     Put your speaker notes here.
     You can see them pressing 's'.
@@ -26,10 +24,14 @@ next(m) # 1
 next(m) # 2
 next(m) # 4
 
+m = map(lambda x, y: (x, y), [0, 1, 2, 3, 4, 5, 6], [2, 4, 6]) # Éq.: zip
+
+next(m) # (0, 2)
+next(m) # (1, 4)
+next(m) # (2, 6)
             </code></pre>
             
     </div>
-
 <aside class="notes">
     Put your speaker notes here.
     You can see them pressing 's'.
@@ -43,18 +45,16 @@ next(m) # 4
 <div>
         <pre><code class="python" data-trim>
 import functools
+import operator
 #
 functools.reduce(function, iterable[, initializer])
 #
 
-m = map(lambda x: 2**x, [0, 1, 2, 3, 4, 5, 6]) # m: &lt;map at 0x7f2308ab7080&gt;
-
-next(m) # 1
-next(m) # 2
-next(m) # 4
-
+reduce(lambda col, x: col + x, [0, 1, 2, 3, 4, 5, 6]) # 21
+reduce(operator.add, [0, 1, 2, 3, 4, 5, 6]) # 21
             </code></pre>
-            
+Mais... Que se passe-t-il si la fonction est non commutative? :O<br/>
+Explication au tableau
     </div>
 
 <aside class="notes">

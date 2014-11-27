@@ -1,10 +1,12 @@
 [
     "index.html",
-    "introduction.html",
     "pourquoi-python.html",
     "comparaisons.html",
     "pause.html",
     "specificitees.html",
     "theorie.html",
+    "autres-pensees.html",
+    "more.html",
     "fin.html"
+    
 ]
