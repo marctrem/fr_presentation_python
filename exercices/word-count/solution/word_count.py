@@ -10,8 +10,6 @@ chars_to_strip_re = re.compile('[,\."\';:-]')
 
 word_holder = defaultdict(int)
 
-curryied_update = lambda word: word_holder.update(word, )
-
 with open('hp1.txt', 'r') as file:
     line = file.read()
 
