@@ -57,7 +57,7 @@ dire_bonjour('Shrek') #; Bonjour Shrek
     <div class="fragment" data-fragment-index="1">
 <pre><code class="python" data-trim>
 def bienvenue_chez(store):
-	return lambda x: print("Hey %s, bienvenu chez %s!")
+	return lambda x: print("Hey %s, bienvenu chez %s!" % (x, store))
 
 bienvenue_chez('Fort fort lointain')('Shrek') #; Hey Shrek, bienvenu chez Fort fort lointain.
 
